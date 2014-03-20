@@ -6,6 +6,10 @@ describe "Static pages" do
     it "should have select h1 with text 'About Us'" do
       visit '/static_pages/about'
       page.should have_selector('h1', :text => 'About Us')
+    end 
+    it "should not have h5 with text 'Buttocks'" do
+      visit '/static_pages/about'
+      page.should_not have_selector('h5', :text => 'Buttocks')
     end    
     it "should have select title with text 'About'" do
       visit '/static_pages/about'
